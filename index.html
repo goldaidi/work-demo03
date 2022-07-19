@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500&display=swap&subset=chinese-traditional');
+        .bg_img {
+            background-image: url("https://x.webdo.cc/userfiles/27760799/image/businessmen-businesswomen-meeting-brainstorming-ideas.jpg");
+            height: 24rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .bg-text {
+            font-family: "Noto Sans TC", "Microsoft Yahei", "微軟雅黑", sans-serif;
+            text-align: center;
+            text-shadow: 2px 2px 4px #222;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .dpP_title {
+            font-size: 3.125rem;
+        }
+        .dpP_txt {
+            font-size: 2rem;
+        }
+        .line_half {
+            width: 10rem;
+            margin: 0 auto;
+            border-top: 3px solid #fff;
+            box-shadow: 2px 2px 4px #222;
+        }
+        @media print, screen and (max-width:1025px) {
+            .bg_img {
+                height: 20rem;
+            }
+        }
+        @media print, screen and (max-width:600px) {
+            .bg_img {
+                height: 18rem;
+            }
+            .dpP_title {
+                font-size: 2.25rem;
+            }
+            .dpP_title span::before {
+                content: "\A";
+                white-space: pre;
+            }
+            .mobile_txt {
+                text-align: center;
+            }
+            .mobile_txt span::before {
+                content: "\A";
+                white-space: pre;
+            }
+            .dpP_txt {
+                font-size: 1.25rem;
+            }
+            .line_half {
+                width: 6rem;
+                margin: 0 auto;
+                border-top: 2px solid #fff;
+                /* box-shadow: 2px 2px 4px #222; */
+                filter: drop-shadow(2 px 2 px 2 px rgba(0,0,0,.5));
+            }
+        }
+        @media print, screen and (max-width:400px) {
+            .dpP_title {
+                font-size: 2.1rem;
+            }
+            .dpP_txt {
+                font-size: 1.1rem;
+            }
+            .line_half {
+                width: 6rem;
+                margin: 0 auto;
+                border-top: 2px solid #fff;
+                /* box-shadow: 2px 2px 4px #222; */
+                filter: drop-shadow(2 px 2 px 2 px rgba(0,0,0,.5));
+            }
+        }
+        
+        /* hover */
+        .card {
+            cursor: pointer;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .card-text {
+            color: #666;
+            font-size: .8rem;
+        }
+        @media print, screen and (max-width:1025px) {
+            .overlay1 {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #4894e0;
+                overflow: hidden;
+                width:0;
+                height: 100%;
+                transition: .3s ease;
+            }
+            .overlay2 {
+                width: 100%;
+            }
+        }
+        @media print, screen and (min-width:1025px) {
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #4894e0;
+                overflow: hidden;
+                width:0;
+                height: 100%;
+                transition: .3s ease;
+            }
+            .card:hover .overlay {
+                width: 100%;
+            }
+        }
+
+        /* .inside_text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        } */
+        .inside_img {
+            margin: 6px;
+            width: 120px !important;
+            height: 85px !important;
+        }
+        .inside_text1 {
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            width: 11rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bg_img">
+        <div class="bg-text">
+            <h1 class="dpP_title">菁英工程師<span>團隊</span></h1>
+            <h2 class="dpP_txt">專業代理，用心服務</h2>
+            <!-- <div class="line_half mt-3"></div> -->
+            <p></p>
+        </div>
+    </div>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                <div id="cardone1" class="card mt-5" style="width: 20rem;">
+                    <img src="https://x.webdo.cc/userfiles/27760799/image/team/JOHN_blue.jpg" class="card-img-top" alt="...">
+                    <div class="card-body px-4">
+                      <h5 class="card-title">金宇瀚&emsp;Yu-Han Jin</h5>
+                      <p class="card-text">Acronis/F-Secure/SOPHOS原廠認證工程師</p>
+                    </div>
+                    <!-- hover -->
+                    <div id="overlaycontent1" class="overlay overlay1 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/Acronis原廠認證工程師-備份_JOHN.jpeg" alt="">
+                            <div class="inside_text1">Tech Associate BACKUP</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/John-BS.jpg" class="inside_img" alt="">
+                            <div class="inside_text1">F-Secure B2B Partner Portfolio and Tools</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/John-Sophos認證.jpg" class="inside_img" alt="">
+                            <div class="inside_text1">ET15-Sophos Central Endpoint and Server v3.0-Engineer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                <div id="cardone2" class="card mt-5" style="width: 20rem;">
+                    <img src="https://x.webdo.cc/userfiles/27760799/image/team/RAY_blue.jpg" class="card-img-top" alt="...">
+                    <div class="card-body px-4">
+                      <h5 class="card-title">莊佳叡&emsp;Ray Chuang</h5>
+                      <p class="card-text">Acronis/F-Secure/SOPHOS原廠認證工程師</p>
+                    </div>
+                    <!-- hover -->
+                    <div id="overlaycontent2" class="overlay overlay1 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/Acronis原廠認證工程師-備份_RAY.jpeg" alt="">
+                            <div class="inside_text1">Tech Associate BACKUP</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/Ray-F-Secure PMCS Technical Training (Basic) certificate.jpeg" class="inside_img" alt="">
+                            <div class="inside_text1">F-Secure PMCS Technical Training</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/SOPHOS Certified Engineer_20201013-Ray.jpg" class="inside_img" alt="">
+                            <div class="inside_text1">Sophos Certified Engineer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                <div id="cardone" class="card mt-5" style="width: 20rem;">
+                    <img src="https://x.webdo.cc/userfiles/27760799/image/team/BEN_blue.jpg" class="card-img-top" alt="...">
+                    <div class="card-body px-4">
+                      <h5 class="card-title">葉哲佑&emsp;Che-Yu YEH</h5>
+                      <p class="card-text">F-Secure/SOPHOS原廠認證工程師</p>
+                    </div>
+                    <!-- hover -->
+                    <div id="overlaycontent" class="overlay overlay1 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/Ben_F-Secure B2B Partner Portfolio and Tools.jpeg" class="inside_img" alt="">
+                            <div class="inside_text1">F-Secure B2B Partner Portfolio and Tools</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/Ben_F-Secure PMCS 14 高級技術認證.jpeg" class="inside_img" alt="">
+                            <div class="inside_text1">F-Secure PMCS 14 Advanced Technical Training</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/Ben_RDR_certificate.jpeg" class="inside_img" alt="">
+                            <div class="inside_text1">F-Secure RDR Technical Training</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/AT15 - Central Endpoint and Server v3_0_Ben.jpg" alt="">
+                            <div class="inside_text1">AT15 Central Endpoint and Server v3.0-Architect</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                <div id="cardone3" class="card mt-5" style="width: 20rem;">
+                    <img src="https://x.webdo.cc/userfiles/27760799/image/team/JOE_blue.jpg" class="card-img-top" alt="...">
+                    <div class="card-body px-4">
+                      <h5 class="card-title">邱志勇&emsp;Joe Chiu</h5>
+                      <p class="card-text">F-Secure/SOPHOS原廠認證工程師</p>
+                    </div>
+                    <!-- hover -->
+                    <div id="overlaycontent3" class="overlay overlay1 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/Joe_F-Secure RDR Technical Training (Basic).jpeg" class="inside_img" alt="">
+                            <div class="inside_text1">F-Secure RDR Technical Training</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/Joe_ET80 - Sophos Firewall v18_5 - Engineer_16087070.jpeg" class="inside_img" alt="">
+                            <div class="inside_text1">ET80-Sophos Firewall v18.5-Engineer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                <div id="cardone4" class="card mt-5" style="width: 20rem;">
+                    <img src="https://x.webdo.cc/userfiles/27760799/image/team/DAVID_blue.jpg" class="card-img-top" alt="...">
+                    <div class="card-body px-4">
+                      <h5 class="card-title">幸偉安&emsp;David Hsing</h5>
+                      <p class="card-text">F-Secure/SOPHOS原廠認證工程師</p>
+                    </div>
+                    <!-- hover -->
+                    <div id="overlaycontent4" class="overlay overlay1 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/David certificate.jpeg" alt="">
+                            <div class="inside_text1">F-Secure RDR Technical Training</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="inside_img" src="https://x.webdo.cc/userfiles/27760799/image/team/David_Sophos Engineer_ET15.jpg" class="inside_img" alt="">
+                            <div class="inside_text1">ET15-Sophos central Endpoint and Server v3.0-Engineer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center my-5" style="color:#14305f;">
+            <h3 class="mobile_txt">菁英團隊還不夠？<span>我們有更多工程師為您服務…</span></h3>
+        </div>
+        
+    </div>
+    <!-- JavaScript Bundle with Popper
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script> -->
+    <script>
+        $(document).ready(function(){
+            $("#cardone").click(function(){
+                $("#overlaycontent").toggleClass("overlay2");
+            });
+        });
+        $(document).ready(function(){
+            $("#cardone1").click(function(){
+                $("#overlaycontent1").toggleClass("overlay2");
+            });
+        });
+        $(document).ready(function(){
+            $("#cardone2").click(function(){
+                $("#overlaycontent2").toggleClass("overlay2");
+            });
+        });
+        $(document).ready(function(){
+            $("#cardone3").click(function(){
+                $("#overlaycontent3").toggleClass("overlay2");
+            });
+        });
+        $(document).ready(function(){
+            $("#cardone4").click(function(){
+                $("#overlaycontent4").toggleClass("overlay2");
+            });
+        });
+    </script>
+</body>
+</html>
